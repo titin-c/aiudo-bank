@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+:root {
+	color-scheme: light dark;
+  }
+  
+ html{ font-size:18px;}
+body{
+	font-size: 1rem;
+	font-family: 'Open Sans', sans-serif;
+	color:$darker-color;
+	min-width: 320px;
+
+	background-color: $primary;
+	opacity: 1;
+	background-size: 6px 6px;
+	background-image: repeating-linear-gradient(45deg, darken($primary, 10%) 0, darken($primary, 10%) 0.6000000000000001px, $primary 0, $primary 50%);
+
+	@include darkMode {
+		background-color: $darker-color;
+		color: $lighter-color;
+		background-color: $primary;
+		background-image: repeating-linear-gradient(45deg, darken($primary, 100%) 0, darken($primary, 100%) 0.6000000000000001px, darken($primary, 50%) 0, darken($primary, 50%) 50%);
+	}
+}
+
+
+*:not(a , .link, input[type="range"], input[type="checkbox"], input[type="radio"]):focus{
+	outline: .2rem solid rgba($primary, .5);
+}
+.block{
+	display: block;
+	width: 100%;
+}
+.no-visible{
+	visibility: hidden;
+}
+hr {
+    width: 100%;
+	margin: $general-margin4 0;
+	opacity: .3;
+}
+svg,img,figure{
+	font-size: .7rem;
+	vertical-align: top;
+		text-anchor: middle;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		user-select: none;
+		min-width: 1rem;
+		max-width: 100%;
+		height: auto;
+		margin: 0;
+		display: inline-block;
+		
+
+		  & text{
+			fill: $grey2;
+		  }
+	
+}
+.img-thumbnail{
+	box-shadow: $box-shadow;
+	border: 3px solid darken($grey1, 5%);
+
+	@include darkMode {
+		border: 3px solid lighten($grey4, 5%);
+
+	  }
+}
+.figure-caption {
+	margin-top: .5rem;
+    font-size: .875rem;
+    color: $grey2;
+	@include darkMode {
+		color: $grey3;
+
+	  }
+}
+
+.round{
+	border-radius: 100%;
+}
+
+//fondos
+.bg-background{background-color: $lighter-color;}
+.bg-color{background-color: $darker-color;}
+
+.bg-primary{background-color: $primary;}
+.bg-secondary{background-color: $secondary;}
+
+.bg-grey1{background-color: $grey1;}
+.bg-grey2{background-color: $grey2;}
+.bg-grey3{background-color: $grey3;}
+.bg-grey4{background-color: $grey4;}
+
+.bg-danger{background-color: $danger;}
+.bg-success{background-color: $success;}

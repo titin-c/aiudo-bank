@@ -1,0 +1,542 @@
+.container {
+    padding: $general-padding2;
+    max-width: $max-screen;
+    margin: auto;
+}
+
+//si no es el ultimo hijo col-n  o span-n poner gap
+div[class^="col-"]:not(:last-child),
+div[class^="span-"]:not(:last-child) {
+    margin-right: $general-gap;
+
+}
+
+//si es el unico col-n  o span-n centrar
+div[class^="col-"]:last-child:first-child,
+div[class^="span-"]:last-child:first-child {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div[class*="col-"],
+div[class*="span-"] {
+    flex: 0 0 auto;
+    margin-bottom: $general-gap;
+    box-sizing: content-box;
+    position: relative;
+}
+
+//quitar padding si es una columna o span dentro de otra para no duplicar
+div[class*="col-"] div[class*="col-"],
+div[class*="col-"] div[class*="span-"],
+div[class*="span-"] div[class*="col-"],
+div[class*="span-"] div[class*="span-"] {
+    padding: 0;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+
+@media (min-width:0px) and (max-width:$small-screen) {
+
+    /* Tamaño pequeño por defecto */
+    div[class*="col-"],
+    div[class*="span-"] {
+        &.col-1 {
+            width: 100%;
+            margin-right: 0 !important;
+        }
+
+        &.col-2 {
+            width: calc((100% - ($general-gap * 1)) / 2);
+
+            &:nth-child(2n) {
+                margin-right: 0 !important;
+            }
+        }
+
+        &.col-3 {
+
+            width: calc((100% - ($general-gap * 2)) / 3);
+
+            &:nth-child(3n) {
+                margin-right: 0 !important;
+            }
+        }
+
+        &.col-4 {
+            width: calc((100% - ($general-gap * 3)) / 4);
+
+            &:nth-child(4n) {
+                margin-right: 0 !important;
+            }
+        }
+
+        &.col-5 {
+            width: calc((100% - ($general-gap * 4)) / 5);
+
+            &:nth-child(5n) {
+                margin-right: 0 !important;
+            }
+        }
+
+        &.col-6 {
+            width: calc((100% - ($general-gap * 5)) / 6);
+
+            &:nth-child(6n) {
+                margin-right: 0 !important;
+            }
+        }
+
+        &.col-7 {
+            width: calc((100% - ($general-gap * 6)) / 7);
+        }
+
+        &.col-8 {
+            width: calc((100% - ($general-gap * 7)) / 8);
+        }
+
+        &.col-9 {
+            width: calc((100% - ($general-gap * 8)) / 9);
+        }
+
+        &.col-10 {
+            width: calc((100% - ($general-gap * 9)) / 10);
+        }
+
+        &.col-11 {
+            width: calc((100% - ($general-gap * 10)) / 11);
+        }
+
+        &.col-12 {
+            width: calc((100% - ($general-gap * 11)) / 12);
+        }
+        &.span-10 {
+            width: calc(10% - $general-gap);
+
+            &:last-child {
+                width: 10%;
+            }
+        }
+
+        &.span-20 {
+            width: calc(20% - $general-gap);
+
+            &:last-child {
+                width: 20%;
+            }
+        }
+
+        &.span-30 {
+            width: calc(30% - $general-gap);
+
+            &:last-child {
+                width: 30%;
+            }
+        }
+
+        &.span-40 {
+            width: calc(40% - $general-gap);
+
+            &:last-child {
+                width: 40%;
+            }
+        }
+
+        &.span-50 {
+            width: calc(50% - $general-gap);
+
+            &:last-child {
+                width: 50%;
+            }
+        }
+
+        &.span-60 {
+            width: calc(60% - $general-gap);
+
+            &:last-child {
+                width: 60%;
+            }
+        }
+
+        &.span-70 {
+            width: calc(70% - $general-gap);
+
+            &:last-child {
+                width: 70%;
+            }
+        }
+
+        &.span-80 {
+            width: calc(80% - $general-gap);
+
+            &:last-child {
+                width: 80%;
+            }
+        }
+
+        &.span-90 {
+            width: calc(90% - $general-gap);
+
+            &:last-child {
+                width: 90%;
+            }
+        }
+
+    }
+
+}
+
+
+@media (min-width:$small-screen) and (max-width:$med-screen) {
+
+    /* Tamaño mediano - tablets */
+    div[class*="col-"],
+    div[class*="span-"] {
+        &.med-col-1 {
+            width: 100%;
+            margin-right: 0 !important;
+        }
+
+        &.med-col-2 {
+            width: calc((100% - ($general-gap * 1)) / 2);
+
+            &:nth-child(2n) {
+                margin-right: 0 !important;
+            }
+        }
+
+        &.med-col-3 {
+            width: calc((100% - ($general-gap * 2)) / 3);
+
+            &:nth-child(3n) {
+                margin-right: 0 !important;
+            }
+        }
+
+        &.med-col-4 {
+            width: calc((100% - ($general-gap * 3)) / 4);
+
+            &:nth-child(4n) {
+                margin-right: 0 !important;
+            }
+        }
+
+        &.med-col-5 {
+            width: calc((100% - ($general-gap * 4)) / 5);
+
+            &:nth-child(5n) {
+                margin-right: 0 !important;
+            }
+        }
+
+        &.med-col-6 {
+            width: calc((100% - ($general-gap * 5)) / 6);
+
+            &:nth-child(6n) {
+                margin-right: 0 !important;
+            }
+        }
+
+        &.med-col-7 {
+            width: calc((100% - ($general-gap * 6)) / 7);
+
+            &:nth-child(7n) {
+                margin-right: 0 !important;
+            }
+        }
+
+        &.med-col-8 {
+            width: calc((100% - ($general-gap * 7)) / 8);
+
+            &:nth-child(8n) {
+                margin-right: 0 !important;
+            }
+        }
+
+        &.med-col-9 {
+            width: calc((100% - ($general-gap * 8)) / 9);
+
+            &:nth-child(9n) {
+                margin-right: 0 !important;
+            }
+        }
+
+        &.med-col-10 {
+            width: calc((100% - ($general-gap * 9)) / 10);
+
+            &:nth-child(10n) {
+                margin-right: 0 !important;
+            }
+        }
+
+        &.med-col-11 {
+            width: calc((100% - ($general-gap * 10)) / 11);
+
+            &:nth-child(11n) {
+                margin-right: 0 !important;
+            }
+        }
+
+        &.med-col-12 {
+            width: calc((100% - ($general-gap * 11)) / 12);
+
+            &:nth-child(12n) {
+                margin-right: 0 !important;
+            }
+        }
+        &.med-span-10 {
+            width: calc(10% - $general-gap);
+
+            &:last-child {
+                width: 10%;
+            }
+        }
+
+        &.med-span-20 {
+            width: calc(20% - $general-gap);
+
+            &:last-child {
+                width: 20%;
+            }
+        }
+
+        &.med-span-30 {
+            width: calc(30% - $general-gap);
+
+            &:last-child {
+                width: 30%;
+            }
+        }
+
+        &.med-span-40 {
+            width: calc(40% - $general-gap);
+
+            &:last-child {
+                width: 40%;
+            }
+        }
+
+        &.med-span-50 {
+            width: calc(50% - $general-gap);
+
+            &:last-child {
+                width: 50%;
+            }
+        }
+
+        &.med-span-60 {
+            width: calc(60% - $general-gap);
+
+            &:last-child {
+                width: 60%;
+            }
+        }
+
+        &.med-span-70 {
+            width: calc(70% - $general-gap);
+
+            &:last-child {
+                width: 70%;
+            }
+        }
+
+        &.med-span-80 {
+            width: calc(80% - $general-gap);
+
+            &:last-child {
+                width: 80%;
+            }
+        }
+
+        &.med-span-90 {
+            width: calc(90% - $general-gap);
+
+            &:last-child {
+                width: 90%;
+            }
+        }
+    }
+}
+
+@media (min-width:$med-screen) {
+
+    /* Tamaño Grande - Computadoras y TV */
+    div[class*="col-"],
+    div[class*="span-"] {
+        &.big-col-1 {
+            width: 100%;
+            margin-right: 0 !important;
+        }
+
+        &.big-col-2 {
+            width: calc((100% - ($general-gap * 1)) / 2);
+
+            &:nth-child(2n) {
+                margin-right: 0 !important;
+            }
+        }
+
+        &.big-col-3 {
+            width: calc((100% - ($general-gap * 2)) / 3);
+
+            &:nth-child(3n) {
+                margin-right: 0 !important;
+            }
+        }
+
+        &.big-col-4 {
+            width: calc((100% - ($general-gap * 3)) / 4);
+
+            &:nth-child(4n) {
+                margin-right: 0 !important;
+            }
+        }
+
+        &.big-col-5 {
+            width: calc((100% - ($general-gap * 4)) / 5);
+
+            &:nth-child(5n) {
+                margin-right: 0 !important;
+            }
+        }
+
+        &.big-col-6 {
+            width: calc((100% - ($general-gap * 5)) / 6);
+
+            &:nth-child(6n) {
+                margin-right: 0 !important;
+            }
+        }
+
+        &.big-col-7 {
+            width: calc((100% - ($general-gap * 6)) / 7);
+
+            &:nth-child(7n) {
+                margin-right: 0 !important;
+            }
+        }
+
+        &.big-col-8 {
+            width: calc((100% - ($general-gap * 7)) / 8);
+
+            &:nth-child(8n) {
+                margin-right: 0 !important;
+            }
+        }
+
+        &.big-col-9 {
+            width: calc((100% - ($general-gap * 8)) / 9);
+
+            &:nth-child(9n) {
+                margin-right: 0 !important;
+            }
+        }
+
+        &.big-col-10 {
+            width: calc((100% - ($general-gap * 9)) / 10);
+
+            &:nth-child(10n) {
+                margin-right: 0 !important;
+            }
+        }
+
+        &.big-col-11 {
+            width: calc((100% - ($general-gap * 10)) / 11);
+
+            &:nth-child(11n) {
+                margin-right: 0 !important;
+            }
+        }
+
+        &.big-col-12 {
+            width: calc((100% - ($general-gap * 11)) / 12);
+
+            &:nth-child(12n) {
+                margin-right: 0 !important;
+            }
+        }
+
+        &.big-span-10 {
+            width: calc(10% - $general-gap);
+
+            &:last-child {
+                width: 10%;
+            }
+        }
+
+        &.big-span-20 {
+            width: calc(20% - $general-gap);
+
+            &:last-child {
+                width: 20%;
+            }
+        }
+
+        &.big-span-30 {
+            width: calc(30% - $general-gap);
+
+            &:last-child {
+                width: 30%;
+            }
+        }
+
+        &.big-span-40 {
+            width: calc(40% - $general-gap);
+
+            &:last-child {
+                width: 40%;
+            }
+        }
+
+        &.big-span-50 {
+            width: calc(50% - $general-gap);
+
+            &:last-child {
+                width: 50%;
+            }
+        }
+
+        &.big-span-60 {
+            width: calc(60% - $general-gap);
+
+            &:last-child {
+                width: 60%;
+            }
+        }
+
+        &.big-span-70 {
+            width: calc(70% - $general-gap);
+
+            &:last-child {
+                width: 70%;
+            }
+        }
+
+        &.big-span-80 {
+            width: calc(80% - $general-gap);
+
+            &:last-child {
+                width: 80%;
+            }
+        }
+
+        &.big-span-90 {
+            width: calc(90% - $general-gap);
+
+            &:last-child {
+                width: 90%;
+            }
+        }
+    }
+}
+
+@media (min-width:$small-screen) {
+.container {
+    padding: $general-padding4;
+}
+}

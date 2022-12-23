@@ -1,0 +1,198 @@
+.btn {
+    @include btn-basic;
+    background-color: rgba($primary, 5%);
+    border-color: $primary;
+    //text-shadow: 0 0 2px lighten($primary, 80%);
+    color: $primary;
+    font-weight: bold;
+    cursor: pointer;
+
+    @include darkMode {
+        background-color: rgba($primary, 5%);
+        text-shadow: 0 0 2px darken($darker-color, 10%);
+        color: $grey1;
+        border-color: $grey2;
+    }
+
+    &-big {
+        padding: $general-padding3 $general-padding4;
+        font-size: 1.1rem;
+    }
+
+    &-small {
+        padding: $general-padding1 $general-padding2 ;
+        font-weight: normal;
+        font-size: .81rem;
+    }
+
+    &-rounded {
+        border-radius: $general-rounded;
+    }
+
+    &-icon {
+        display: flex;
+        align-items: center;
+
+        & svg {
+            width: 1rem;
+            height: 1rem;
+            margin-left: $general-margin3;
+            margin-right: $general-margin3;
+            fill: $darker-color;
+        }
+    }
+
+
+    &:hover {
+        background-color: $lighter-color;
+        border-color: $grey2;
+        box-shadow: 0 0 10px rgba($primary, 30%);
+
+        @include darkMode {
+            background-color: $darker-color;
+            border-color: $lighter-color;
+            box-shadow: 0 0 10px rgba($lighter-color, 30%);
+            text-shadow: 0 0 2px darken($darker-color, 50%);
+
+        }
+    }
+
+    &-disabled {
+        opacity: .5;
+        text-shadow: none;
+        box-shadow: none;
+        cursor: initial;
+
+        @include darkMode {
+            opacity: .5;
+            background-color: $grey4;
+            border-color: lighten($grey4, 20%);
+            text-shadow: none;
+            color: $lighter-color;
+        }
+
+        &:hover {
+            border-color: $primary;
+            box-shadow: none;
+            cursor: initial;
+
+            @include darkMode {
+                opacity: .5;
+                background-color: $grey4;
+                border-color: lighten($grey4, 20%);
+                text-shadow: none;
+                color: $lighter-color;
+            }
+        }
+    }
+
+    &-primary {
+        background-color: $primary;
+        border-color: $primary;
+        text-shadow: 0 0 2px darken($primary, 40%);
+        color: white;
+
+        @include darkMode {
+            background-color: darken($primary, 5%);
+            border-color: darken($primary, 5%);
+            text-shadow: 0 0 2px darken($primary, 50%);
+            color: white;
+        }
+
+        &:hover {
+            background-color: lighten($primary, 10%);
+            text-shadow: 0 0 2px darken($primary, 50%);
+            border-color: $primary;
+        }
+
+        &.btn-disabled {
+            background-color: $primary;
+            border-color: $primary;
+            text-shadow: none;
+            opacity: .5;
+            color: white;
+
+            &:hover {
+                background-color: $primary;
+                border-color: darken($primary, 10%);
+                text-shadow: none;
+
+            }
+        }
+    }
+
+    &-danger {
+        @include alert-icon;
+        background-color: $danger;
+        border-color: $danger;
+        text-shadow: 0 0 2px darken($danger, 40%);
+        color: white;
+
+        @include darkMode {
+            background-color: darken($danger, 5%);
+            border-color: darken($danger, 5%);
+            text-shadow: 0 0 2px darken($danger, 50%);
+            color: white;
+        }
+
+        &:hover {
+            background-color: lighten($danger, 5%);
+            box-shadow: 0 0 10px rgba($danger, 50%);
+            text-shadow: 0 0 3px darken($danger, 40%);
+            border-color: $danger;
+        }
+
+        &.btn-disabled {
+            background-color: $danger;
+            border-color: $danger;
+            text-shadow: none;
+            opacity: .5;
+
+            &:hover {
+                box-shadow: none;
+            }
+        }
+    }
+
+    &-success {
+        background-color: $success;
+        border-color: $success;
+        text-shadow: 0 0 3px darken($success, 40%);
+        color: white;
+
+        @include darkMode {
+            background-color: darken($success, 5%);
+            border-color: darken($success, 5%);
+            text-shadow: 0 0 2px darken($success, 50%);
+            color: white;
+        }
+
+        &:hover {
+            background-color: lighten($success, 10%);
+            box-shadow: 0 0 10px rgba($success, 50%);
+            border-color: $success;
+        }
+
+        &.btn-disabled {
+            background-color: $success;
+            border-color: $success;
+            opacity: .5;
+            text-shadow: none;
+
+            &:hover {
+                border-color: $success;
+                box-shadow: none;
+            }
+
+        }
+    }
+
+    &.block {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    &+.btn {
+        margin-top: $general-margin2;
+    }
+}

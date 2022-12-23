@@ -1,0 +1,61 @@
+//darkmode
+@mixin darkMode {
+  @if($darkMode) {
+    @media(prefers-color-scheme: dark) {
+      @content;
+    }
+  }
+}
+@mixin animation{
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+//titles and display fonts
+@mixin title {
+  line-height: 1;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+//buttons
+@mixin btn-basic {
+  @include animation;
+  margin: $btn-margin;
+  padding: $btn-padding;
+  border: 2px solid;
+  border-radius: $btn-radius;
+  max-width: 100%;
+  text-decoration: none;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+//form-control
+@mixin form-control-basic {
+  @include animation;
+  margin: $form-control-margin;
+  padding: $form-control-padding;
+  border: 1px solid;
+  border-radius: $form-control-radius;
+  max-width: 100%;
+  min-height: 2.6rem;
+  line-height: 1rem;
+}
+
+@mixin alert-icon {
+  display: flex;
+  align-items: center;
+  &::after {
+    content: url(../../source/icons/alert.svg);
+    display: inline-block;
+    margin-left: 7px;
+    width: 20px;
+    height: 100%;
+}
+  
+}

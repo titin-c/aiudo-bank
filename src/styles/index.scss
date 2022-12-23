@@ -1,0 +1,34 @@
+//importar todos los archivos de configuración
+@import './configure/';
+
+// css gloval de la página
+@import './gloval';
+
+// css de estructura de la página
+@import './containers';
+
+
+// css de las navbar
+@import './navbar';
+
+// css de los text, fonts, etc
+@import './fonts';
+
+// css de los componentes
+@import './buttons';
+@import './forms/form-control.scss';
+
+// css de las cards
+@import './cards';
+
+
+
+
+
+
+// estilo de cada págna
+
+@import '../auth/styles/auth-styles';
+@import '../panel/styles/panel-styles';
+@import '../ui/styles/ui-styles';
+

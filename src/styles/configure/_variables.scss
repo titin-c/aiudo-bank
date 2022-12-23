@@ -1,0 +1,57 @@
+$darkMode: true;
+
+//general framework colors
+$lighter-color: #FAFAFA;
+$darker-color: #2c1d1d;
+
+$primary: #F13125;
+$secondary: #ff9d00;
+
+$grey1: lighten($darker-color, 75%);
+$grey2: lighten($darker-color, 50%);
+$grey3: lighten($darker-color, 30%);
+$grey4: lighten($darker-color, 10%);
+
+$danger: #ff4d4f;
+$success: #41bf5a;
+
+$box-shadow: rgba($grey3, .5);
+
+//general margin
+$general-margin0: none;
+$general-margin1: .25rem;
+$general-margin2: .5rem;
+$general-margin3: 1rem;
+$general-margin4: 1.5rem;
+
+$general-gap: 1rem;
+
+//general padding
+$general-padding0: none;
+$general-padding1: .25rem;
+$general-padding2: .5rem;
+$general-padding3: 1rem;
+$general-padding4: 1.5rem;
+
+//general radius
+$general-radius0: none;
+$general-radius1: .2rem;
+$general-radius2: .5rem;
+$general-radius3: 1rem;
+$general-rounded: 10rem;
+
+
+
+//buttons
+$btn-margin: 0 $general-margin1;
+$btn-padding: $general-padding2 calc($general-padding3 * .8);
+$btn-radius: $general-radius1;
+
+//inputs, selects, text-areas
+$form-control-margin: 0 $general-margin1;
+$form-control-padding: $general-padding2 calc($general-padding3 * .8);
+$form-control-radius: $general-radius1;
+
+$small-screen: 600px;
+$med-screen: 950px;
+$max-screen: 1300px;

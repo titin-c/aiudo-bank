@@ -1,0 +1,248 @@
+p {
+    margin: 0 0 1rem;
+    line-height: 1.4;
+    font-size: 1rem;
+
+}
+
+a,
+.link {
+    color: $primary;
+
+    @include darkMode {
+      // filter: invert(100%);
+    }
+}
+
+h1,
+.h1 {
+    @include title;
+
+    font-size: 2.3rem;
+    font-weight: 700;
+}
+
+h2,
+.h2 {
+    @include title;
+
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+h3,
+.h3 {
+    @include title;
+
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+
+h4,
+.h4 {
+    @include title;
+
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+h5,
+.h5 {
+    @include title;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+h6,
+.h6 {
+    @include title;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.display-1 {
+    @include title;
+
+    font-size: 4rem;
+    font-weight: 300;
+}
+
+.display-2 {
+    @include title;
+
+    font-size: 3.5rem;
+    font-weight: 300;
+}
+
+.display-3 {
+    @include title;
+
+    font-size: 3rem;
+    font-weight: 300;
+}
+
+.display-4 {
+    @include title;
+
+    font-size: 2.5rem;
+    font-weight: 300;
+
+}
+
+.display-5 {
+    @include title;
+
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.display-6 {
+    @include title;
+
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+p.lead {
+    font-size: 1.3rem;
+}
+
+mark {
+    padding: 1px 5px;
+    border-radius: 2px;
+    position: relative;
+    background-color: rgba($secondary, .8);
+
+    @include darkMode {
+        background-color: rgba($primary, .3);
+        color: $lighter-color;
+    }
+
+}
+
+blockquote {
+    border-left: 3px solid $primary;
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-size: 1.25em;
+    font-style: italic;
+    line-height: 1.8em;
+    margin: $general-margin2 ;
+    padding: $general-padding3 ;
+    position: relative;
+    transition: 0.2s border ease-in-out;
+    z-index: 0;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: -4px;
+        height: 2em;
+        background-color: $lighter-color;
+        width: 5px;
+        margin-top: -1em;
+
+        @include darkMode {
+            background-color: $darker-color;
+        }
+    }
+
+    :after {
+        content: "”";
+        position: absolute;
+        top: 50%;
+        left: -0.5em;
+        color: $primary;
+        font-style: normal;
+        line-height: 1.2em;
+        text-align: center;
+        text-indent: -2px;
+        width: 1em;
+        margin-top: -0.3em;
+        transition: 0.2s all ease-in-out, 0.4s transform ease-in-out;
+    }
+
+    & p {
+        margin-bottom: 0;
+    }
+
+    & footer {
+        display: block;
+        font-size: 0.75em;
+        line-height: 1.8em;
+        color: $grey3;
+        margin-top: -.5em;
+
+        &::before {
+            content: '—';
+            margin-right: 5px;
+        }
+    }
+}
+
+ul.list{
+    list-style: none;
+    padding-left: 1.4rem;
+
+    & li{
+        position: relative;
+        margin-bottom: $general-margin2;
+
+        &::before{
+            content: '▪';
+            color: $primary;
+            position: absolute;
+            left: -1rem;
+        }
+        & ul{
+            padding-left: 1rem;
+            margin: 1rem 0;
+            list-style: none;
+
+            & li::before{
+                content: '▫';
+            }
+        }
+    }
+}
+
+ul.list-inline {
+    list-style: none;
+    padding-left: 0;
+    font-size: .9rem;
+
+    & li {
+        position: relative;
+        display: inline;
+        margin-left: 1.4rem;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:not(:first-child)::before {
+            content: "|";
+            position: absolute;
+            left: -1rem;
+            color: $primary;
+        }
+    }
+}
+
+pre {
+    line-height: 1rem;
+    white-space: break-spaces;
+}
+
+code {
+    background-color: rgba($grey4, 10%);
+    padding: calc($general-padding1 / 2) $general-padding1;
+    border-radius: $general-radius1;
+    display: inline-block;
+    line-height: 1rem;
+    font-size: .9rem;
+
+    @include darkMode {
+        background-color: darken($grey4, 3%);
+    }
+}

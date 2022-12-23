@@ -1,0 +1,120 @@
+.header-login {
+    display: flex;
+    align-items: center;
+
+    & h1 {
+        margin-bottom: 0;
+    }
+
+    & .logo {
+        
+        margin: 0 20px;
+
+        & img{width: 60px;}
+
+    }
+}
+
+
+.login {
+    & section {
+        margin: 50px 0;
+    }
+
+    & .card {
+        padding: 50px 20px 1px;
+    }
+
+    & .form-row{
+margin-bottom: 20px;
+    }
+}
+
+.buttons {
+    display: flex;
+    margin-bottom: 10px;
+    flex-direction: column;
+
+    &.buttons-huella{
+        flex-direction: row;
+
+        & .btn:first-child{
+            margin-right: 10px;
+        }
+    }
+
+    
+}
+
+.form-feedback{
+    display: none;
+    &.error{
+        display: flex;
+        align-items: flex-start;
+        margin-top: 5px;
+        color:$danger;
+        & svg{
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+        }
+    }
+}
+
+.btn {
+    &-dark {
+        background-color: $darker-color;
+        border-color: $darker-color;
+        color: $lighter-color;
+
+        &:hover{
+            background-color: rgba($darker-color, .8);
+        }
+    }
+
+    &.huella {
+        width: 80px;
+        display: flex;
+        margin-top: 0px;
+        align-items: center;
+
+        & svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+footer {
+    margin-top: 20px;
+    color: #fff;
+    font-size: .8rem;
+    display: flex;
+    align-items: center;
+
+    & img{
+        width: 30px;
+        margin-right: 20px;
+    }
+
+    & a{color: $secondary;}
+
+
+}
+@media (min-width:$small-screen) {
+.buttons {
+    display: flex;
+    margin-bottom: 10px;
+    align-items: flex-end;
+    flex-direction: row;
+
+
+    & .btn:first-child{
+        margin-right: 10px;
+    }
+    & button.google {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+}

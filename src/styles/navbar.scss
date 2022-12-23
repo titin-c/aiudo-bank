@@ -1,0 +1,26 @@
+.navbar{
+
+&-menu {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    &:target {
+        display: block;
+        width: 100%;
+    }
+}
+
+&-item a{
+        display: block;
+        width: 100%;
+        padding: $general-padding2;
+        font-size: 24px;
+        text-decoration: none;
+
+        &:hover{
+            background-color: rgba($lighter-color, .3);
+        }
+    }
+}

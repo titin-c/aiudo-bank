@@ -1,0 +1,388 @@
+fieldset {
+    padding: $general-padding2 $general-padding3 0;
+    border: solid 1px $grey2;
+    margin-bottom: $general-padding3;
+    border-radius: $general-radius1;
+
+    & legend {
+        color: $grey2;
+        font-size: .8rem;
+        text-transform: uppercase;
+        padding: 0 $general-padding2;
+    }
+}
+
+.form {
+
+    &-label {
+        text-transform: uppercase;
+        color: $grey2;
+        font-size: .8rem;
+        height: 1.2rem;
+        display: block;
+
+        @include darkMode {
+            color: $grey2;
+        }
+    }
+
+    &-feedback {
+        color: $grey2;
+        font-size: .8rem;
+        height: 1.2rem;
+        display: block;
+        display: flex;
+        align-items: flex-end;
+
+        @include darkMode {
+            color: $grey3;
+        }
+    }
+
+    &-control {
+        @include form-control-basic;
+
+        background-color: $lighter-color;
+        border-color: $grey2;
+
+        @include darkMode {
+            background-color: $darker-color;
+            border-color: $grey2;
+            text-shadow: 0 0 2px darken($grey4, 50%);
+            color: $lighter-color;
+        }
+
+        &::placeholder {
+            color: $grey2;
+
+            @include darkMode {
+                color: $grey3;
+            }
+        }
+
+        &>option:first-child {
+            color: $grey2
+        }
+
+        &.block {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+}
+
+// input type range
+input[type="range"] {
+    -webkit-appearance: none;
+    height: 7px;
+    background: $grey1;
+    border-radius: .2rem;
+    background-image: linear-gradient($primary, $primary);
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    margin: $general-margin2 0 0;
+}
+
+/* Input Thumb */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: $primary;
+    cursor: ew-resize;
+    transition: background .3s ease-in-out;
+}
+
+input[type="range"]::-moz-range-thumb {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: $primary;
+    cursor: ew-resize;
+    transition: background .3s ease-in-out;
+}
+
+input[type="range"]::-ms-thumb {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: $primary;
+    cursor: ew-resize;
+    transition: background .3s ease-in-out;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    background: $primary;
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+    background: $primary;
+}
+
+input[type="range"]::-ms-thumb:hover {
+    background: $primary;
+}
+
+/* Input Track */
+input[type=range]::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+}
+
+input[type=range]::-moz-range-track {
+    -webkit-appearance: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+}
+
+input[type="range"]::-ms-track {
+    -webkit-appearance: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+}
+
+//radio y checkbox inputs
+input[type="radio"],
+input[type="checkbox"] {
+
+    display: inline-block;
+    width: 31px;
+    height: 31px;
+    margin-bottom: 0.25em;
+    vertical-align: top;
+    border: 1px solid $grey2;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+    position: relative;
+
+    @include darkMode {
+        background-color: $darker-color;
+    }
+
+    //si tiene class .rounded
+    &.rounded {
+        border-radius: $general-rounded;
+
+        &::before {
+            border-radius: $general-rounded;
+        }
+    }
+
+    //el selector
+    &::before {
+        @include animation;
+
+        content: " ";
+        display: inline-block;
+        width: 23px;
+        height: 23px;
+        background-color: $lighter-color;
+        position: absolute;
+        top: 3px;
+        left: 3px;
+
+        @include darkMode {
+            background-color: $darker-color;
+        }
+    }
+
+    // cuando está checked el input
+    &:checked {
+        border-color: $primary;
+
+        @include darkMode {
+            box-shadow: none;
+        }
+
+        &::before {
+            background-color: $primary;
+        }
+
+        &+.form-label {
+            color: $primary;
+        }
+    }
+
+    &.success {
+        &:checked {
+            border-color: $success;
+
+            &::before {
+                background-color: $success;
+            }
+
+            &+.form-label {
+                color: $success;
+            }
+        }
+    }
+
+    &.danger {
+        //border-color: $danger;
+
+        &:checked {
+            border-color: $danger;
+
+            &::before {
+                background-color: $danger;
+            }
+
+            &+.form-label {
+                color: $danger;
+                opacity: 1;
+            }
+        }
+
+        /* &+.form-label {
+            opacity: .7;
+            color:  darken($danger, 30%);
+        } */
+    }
+}
+
+//switch input
+input[type="checkbox"],
+input[type="radio"] {
+    &.form-switch {
+        width: 52px;
+
+        @include darkMode {
+            background-color: $darker-color;
+        }
+
+        //si tiene class .rounded
+        &.rounded {
+            border-radius: $general-rounded;
+
+            &::before {
+                border-radius: $general-rounded;
+            }
+        }
+
+        //el selector
+        &::before {
+            background-color: $grey2;
+            width: 24px;
+            height: 24px;
+            top: 2px;
+
+            @include darkMode {
+                background-color: $grey2;
+            }
+        }
+
+        // cuando está checked el input
+        &:checked {
+            background-color: $secondary;
+
+            &::before {
+                left: calc(100% - 27px);
+                background-color: $primary;
+            }
+
+            &+.form-label {
+                color: $primary;
+            }
+
+        }
+            }
+
+    &+.form-label {
+        padding-left: $general-padding1;
+        padding-top: $general-padding1;
+        text-transform: unset;
+        display: inline-block;
+        font-size: 1rem;
+    }
+}
+
+input[type="file" i].form-control {
+    opacity: 0;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    width: 100%;
+
+
+    &+.form-upload {
+        @include form-control-basic;
+        min-height: 3rem;
+        display: flex;
+        align-items: stretch;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        font-size: .9rem;
+        color: $grey2;
+        left: 0;
+        top: 20px;
+        opacity: 1;
+        position: absolute;
+        z-index: -1;
+        padding: 2px;
+        margin-left: 0;
+        cursor: pointer;
+        background-color: $lighter-color;
+        border-color: $grey2;
+        width: 100%;
+        border-style: dashed !important;
+
+        @include darkMode {
+            background-color: $darker-color;
+            border-color: $grey2;
+            text-shadow: 0 0 2px darken($grey4, 50%);
+            color: $lighter-color;
+
+        }
+
+        &::before {
+            @include animation;
+            content: url(../../source/icons/upload.svg);
+            background-color: $grey2;
+            border-radius: $general-radius1;
+            cursor: pointer;
+            width: 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @include darkMode {
+                background-color: $grey4;
+
+            }
+        }
+
+        & .form-upload-text {
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            padding-left: 1rem;
+            flex-wrap: wrap;
+            padding-left: $general-padding3;
+            color: $grey3;
+            @include darkMode {color: $grey2;}
+
+            & strong{
+                color: $primary;
+            }
+            & span{
+                color: $grey2;
+                @include darkMode {color: $secondary;}
+            }
+        }
+
+    }
+
+    &:hover+.form-upload::before {
+        background-color: $primary;
+    }
+}
