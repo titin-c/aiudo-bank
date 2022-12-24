@@ -24,7 +24,7 @@ export const Abono = () => {
         <form onSubmit={onSubmitAbono}>
             <div className="form-row">
                 <label className="form-label" htmlFor="form-control-2">
-                    Cantidad a abonar
+                    Cantidad a amortizar
                 </label>
                 <div className="input-button">
                     <input
