@@ -3,8 +3,8 @@ import { createSlice } from '@reduxjs/toolkit';
 export const bankActionsSlice = createSlice({
     name: 'bankActions',
     initialState: {
-        totalCount: 100,
-        totalPrestamo: -10000,
+        totalCount: 800,
+        totalPrestamo: -145000,
         errorMessage: ''
     },
     reducers: {
@@ -32,13 +32,16 @@ export const bankActionsSlice = createSlice({
         abono: (state, action) => {
             if (!action.payload ) {
                 state.errorMessage = 'Amortice alguna cantidad.'
-            }else if (action.payload > state.totalCount) {
+            } else if (action.payload > state.totalCount) {
                 state.errorMessage = 'No tienes tanto dinero, haz un ingreso antes.'
-            } else {
+            } else  if(action.payload < state.totalCount && state.totalPrestamo < 0 ) {
                 state.totalCount -= action.payload;
                 state.totalPrestamo += action.payload;
                 state.errorMessage = 'Amortización realizado con éxito.'
-            }
+            } if (state.totalPrestamo > 0) {
+                state.totalPrestamo = 0;
+                state.errorMessage = 'Prestamo amortizado.'
+            } 
 
         },
     }

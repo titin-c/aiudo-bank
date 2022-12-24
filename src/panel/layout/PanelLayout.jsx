@@ -45,7 +45,7 @@ export const PanelLayout = ({ children, title = '' }) => {
             </div>
             <div className="panel_header-total">
               <small>Total:</small>
-              <span className={`cantidad ${totalPositions < 0 ? 'deuda' : ''}`}>{totalPositions}€</span>
+              <span className={`cantidad ${totalPositions < 0 ? 'deuda' : ''}`}>{new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(totalPositions)}</span>
               <small>*Suma total de sus posiciones</small>
             </div>
           </header>

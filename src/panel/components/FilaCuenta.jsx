@@ -2,11 +2,11 @@ import { useSelector } from 'react-redux';
 
 import { Ingreso } from './Ingreso';
 import { Transferencia } from './Transferencia';
+import { Abono } from './Abono';
 
 import useToggle from '../../hooks/useToogle';
 
 import { CgMoreVerticalAlt, CgMoreAlt } from 'react-icons/cg';
-import { Abono } from './Abono';
 
 export const FilaCuenta = () => {
 
@@ -22,14 +22,11 @@ export const FilaCuenta = () => {
         <div className="cuenta_card-left">
           <div className="cuenta_card-top">
             <div className="cuenta_card-top-nombre">Cuenta de {displayName}</div>
-            <div className="cuenta_card-top-total">
-              <span className={`cantidad ${totalCount < 0 ? 'deuda' : ''}`}>{totalCount}€</span></div>
+            <div className="cuenta_card-detalle">AB12 1234 1234 12 1234567890</div>
           </div>
-
-          <div className="cuenta_card-detalle">AB12 1234 1234 12 1234567890</div>
-
-
-
+          <div className="cuenta_card-top-total">
+            <span className={`cantidad ${totalCount < 0 ? 'deuda' : ''}`}>{new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(totalCount)}</span>
+          </div>
         </div>
         <div className="cuenta_card-right">
           <div className="btn btn-small action-btn" onClick={() => setToggle(!toggled)} >{toggled ? <CgMoreAlt /> : <CgMoreVerticalAlt />}</div>
@@ -59,7 +56,7 @@ export const FilaCuenta = () => {
             <h3 className='display-6'>Hacer un transferencia</h3>
 
             <Transferencia />
-            
+
           </div>
 
           <div className="tab-content">
