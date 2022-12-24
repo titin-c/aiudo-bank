@@ -163,7 +163,7 @@ section {
             display: flex;
             justify-content: space-between;
             font-weight: bold;
-            font-size: .8rem;
+            font-size: .9rem;
 
             &-total {
                 font-size: 1rem;
@@ -172,8 +172,8 @@ section {
 
         &-detalle {
             margin-top: 5px;
-            font-size: .6rem;
-            color: $grey2;
+            font-size: .7rem;
+            color: $grey3;
 
             @include darkMode {
                 color: $darker-color;
@@ -297,3 +297,7 @@ section {
     display: block;
 }
 
+.btn.btn-small.action-btn {
+    padding: 0;
+    border-color: $grey3;
+}

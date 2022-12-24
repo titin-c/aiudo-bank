@@ -13,23 +13,23 @@ export const bankActionsSlice = createSlice({
         },
         ingreso: (state, action) => {
             state.totalCount += action.payload;
-            state.errorMessage = ''
+            state.errorMessage = 'Ingreso realizado correctamente.'
         },
         transferencia: (state, action) => {
             if (action.payload > state.totalCount) {
                 state.errorMessage = 'No tienes tanto dinero, haz un ingreso antes.'
             } else {
                 state.totalCount -= action.payload;
-                state.errorMessage = ''
+                state.errorMessage = 'Transferencia realizada correctamente.'
             }
         },
         abono: (state, action) => {
             if (action.payload > state.totalCount) {
-                state.errorMessage = ''
+                state.errorMessage = 'No tienes tanto dinero, haz un ingreso antes.'
             } else {
                 state.totalCount -= action.payload;
                 state.totalPrestamo += action.payload;
-                state.errorMessage = 'Abono realizado con éxito.'
+                state.errorMessage = 'Amortización realizado con éxito.'
             }
 
         },

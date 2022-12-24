@@ -32,7 +32,7 @@ export const FilaCuenta = () => {
 
         </div>
         <div className="cuenta_card-right">
-          <div className="action-btn" onClick={() => setToggle(!toggled)} >{toggled ? <CgMoreAlt /> : <CgMoreVerticalAlt />}</div>
+          <div className="btn btn-small action-btn" onClick={() => setToggle(!toggled)} >{toggled ? <CgMoreAlt /> : <CgMoreVerticalAlt />}</div>
 
         </div>
 
