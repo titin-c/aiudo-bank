@@ -23,11 +23,11 @@ A continuacón explico la estructura de archivos y carpetas.
 
 
 - **assets:** Carpeta de imagenes, archivos e iconos.
-- **auth:** Carpeta  con todo lo relativo a la autentificación, login y registro.
+- **auth:** Carpeta  con todo lo relativo a la autenticación, login y registro.
     - **layaout:** Diseño de las plantillas.
     - **pages:** Diseño de las páginas.
-    - **routes:** Rutas de la autentificación.
-    - **styles:** Archivos de estilos de autentificación.
+    - **routes:** Rutas de la autenticación.
+    - **styles:** Archivos de estilos de autenticación.
 - **firebase:** Carpeta con configuración de firebase.
 - **hooks:** Personal hooks reutilizables.
 - **panel:** Carpeta con todo lo relativo al panel del banco.
@@ -41,7 +41,7 @@ A continuacón explico la estructura de archivos y carpetas.
     -**auth:** Slices y thunk (peticiones asíncronas) del auth.
     -**panel:** Plices del panel.
 - **styles:** Librería css propia creada con Sass.
-- **ui:** Carpeta para archivos que no pertenecen ni al panel ni a la autentificación... en este caso el spiner del loading.
+- **ui:** Carpeta para archivos que no pertenecen ni al panel ni a la autenticación... en este caso el spiner del loading.
 
 
 ## `Pros del proyecto`
