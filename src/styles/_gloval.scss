@@ -19,7 +19,6 @@ body{
 	@include darkMode {
 		background-color: $darker-color;
 		color: $lighter-color;
-		background-color: $primary;
 		background-image: repeating-linear-gradient(45deg, darken($primary, 100%) 0, darken($primary, 100%) 0.6000000000000001px, darken($primary, 50%) 0, darken($primary, 50%) 50%);
 	}
 }
