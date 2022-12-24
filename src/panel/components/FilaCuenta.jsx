@@ -63,7 +63,7 @@ export const FilaCuenta = () => {
           </div>
 
           <div className="tab-content">
-            <h3 className='display-6'>Hacer desamortización en préstamo</h3>
+            <h3 className='display-6'>Hacer amortización del préstamo</h3>
 
             <Abono />
           </div>

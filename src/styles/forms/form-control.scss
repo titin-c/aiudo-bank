@@ -283,7 +283,7 @@ input[type="radio"] {
 
         // cuando está checked el input
         &:checked {
-            background-color: $secondary;
+            background-color: $grey1;
 
             &::before {
                 left: calc(100% - 27px);

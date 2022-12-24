@@ -38,6 +38,7 @@
 //form-control
 @mixin form-control-basic {
   @include animation;
+  color: $darker-color;
   margin: $form-control-margin;
   padding: $form-control-padding;
   border: 1px solid;

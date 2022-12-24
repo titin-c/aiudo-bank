@@ -17,6 +17,23 @@ $success: #41bf5a;
 
 $box-shadow: rgba($grey3, .5);
 
+//General Dark colors
+$dark-lighter-color: #FAFAFA;
+$dark-darker-color: #2c1d1d;
+
+$dark-primary: #F13125;
+$dark-secondary: #ff9d00;
+
+$dark-grey1: lighten($darker-color, 75%);
+$dark-grey2: lighten($darker-color, 50%);
+$dark-grey3: lighten($darker-color, 30%);
+$dark-grey4: lighten($darker-color, 10%);
+
+$dark-danger: #ff4d4f;
+$dark-success: #41bf5a;
+
+$dark-box-shadow: rgba($grey3, .5);
+
 //general margin
 $general-margin0: none;
 $general-margin1: .25rem;
