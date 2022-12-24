@@ -22,7 +22,7 @@ export const PanelLayout = ({ children, title = '' }) => {
     <main className="main  panel">
       <div className="container">
 
-        <div className="card">
+        <div className="card  animate__animated animate__fadeIn animate__faster">
           <header className="panel_header">
           <div className="panel_header-user">
             <div className="user">
@@ -30,7 +30,7 @@ export const PanelLayout = ({ children, title = '' }) => {
             <span className="user_name">{displayName}</span>
             </div>
             <div className="panel_header-menu-container"><button className="btn btn-dark" onClick={() => setToggle(!toggled)} ><FaBars /></button>
-            <div className={`panel_header-menu ${toggled && 'active'}`} > 
+            <div className={`panel_header-menu ${toggled && 'active  animate__animated animate__fadeInDown animate__faster'} `} > 
             <div className="panel_header-menu-header">{displayName}</div>
             <div className="panel_header-menu-item"><button className="btn btn-primary btn-small block" onClick={onLogout} >Cerrar sesión  <FiLogOut /></button>
             </div>

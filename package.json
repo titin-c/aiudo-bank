@@ -1,11 +1,11 @@
 {
   "name": "aiudo-app",
-  "homepage": "https://titin-c.github.io/aiudo-bank/", 
+  "homepage": "https://titin-c.github.io/aiudo-bank/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "predeploy": "npm run build", 
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "dev": "vite",
     "build": "vite build",
@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.1",
+    "animate.css": "^4.1.1",
     "firebase": "^9.15.0",
     "gh-pages": "^4.0.0",
     "react": "^18.2.0",

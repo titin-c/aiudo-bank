@@ -1,11 +1,12 @@
 
+import 'animate.css'; 
 import { CgMoreVerticalAlt, CgMoreAlt } from "react-icons/cg";
 import useToggle from '../../hooks/useToogle';
 
 export const FilaCuenta = () => {
     const { toggled, setToggle } = useToggle(false);
   return (
-    <div className="cuenta">
+    <div className="cuenta animate__animated animate__fadeInDown animate__faster">
             <div className="cuenta_card">
               <div className="cuenta_card-left">
                 <div className="cuenta_card-top">
@@ -24,7 +25,7 @@ export const FilaCuenta = () => {
               </div>
 
             </div>
-            <div  className={toggled ? "cuenta_card-acciones active" : "cuenta_card-acciones"}>
+            <div  className={toggled ? "cuenta_card-acciones  active  animate__animated animate__fadeInUp  animate__faster" : "cuenta_card-acciones"}>
               <div className="tabbed">
                 <input type="radio" id="tab21" name="css-tabs2" defaultChecked />
                 <input type="radio" id="tab22" name="css-tabs2" />

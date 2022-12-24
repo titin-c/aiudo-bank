@@ -21,7 +21,7 @@ export const PanelPage = () => {
         <section>
           <h2 className="display-4 title">Prestamos</h2>
           
-          <div className="cuenta">
+          <div className="cuenta animate__animated animate__fadeInDown  animate__faster">
             <div className="cuenta_card">
               <div className="cuenta_card-left">
                 <div className="cuenta_card-top">
