@@ -8,8 +8,12 @@ export const bankActionsSlice = createSlice({
         errorMessage: ''
     },
     reducers: {
+        borrarMensaje: (state) =>{
+            state.errorMessage = ''
+        },
         ingreso: (state, action) => {
             state.totalCount += action.payload;
+            state.errorMessage = ''
         },
         transferencia: (state, action) => {
             if (action.payload > state.totalCount) {
@@ -21,11 +25,11 @@ export const bankActionsSlice = createSlice({
         },
         abono: (state, action) => {
             if (action.payload > state.totalCount) {
-                state.errorMessage = 'No tienes tanto dinero, Haz un ingreso antes.'
+                state.errorMessage = ''
             } else {
                 state.totalCount -= action.payload;
                 state.totalPrestamo += action.payload;
-                state.errorMessage = ''
+                state.errorMessage = 'Abono realizado con éxito.'
             }
 
         },
@@ -34,4 +38,4 @@ export const bankActionsSlice = createSlice({
 
 
 // Action creators are generated for each case reducer function
-export const { ingreso, transferencia, abono } = bankActionsSlice.actions;
+export const { ingreso, transferencia, abono, borrarMensaje } = bankActionsSlice.actions;

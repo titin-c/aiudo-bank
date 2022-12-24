@@ -13,11 +13,7 @@ export const FilaCuenta = () => {
   const { totalCount } = useSelector(state => state.bankActions);
   const { displayName } = useSelector(state => state.auth)
 
-  
-
   const { toggled, setToggle } = useToggle(false);
-
- 
 
 
   return (
@@ -48,8 +44,8 @@ export const FilaCuenta = () => {
           <input type="radio" id="tab23" name="css-tabs2" />
 
           <ul className="tabs">
-            <li className="tab"><label htmlFor="tab21">Ingreso</label></li>
-            <li className="tab"><label htmlFor="tab22">Transferencia</label></li>
+            <li className="tab"><label htmlFor="tab21" >Ingreso</label></li>
+            <li className="tab"><label htmlFor="tab22" >Transferencia</label></li>
             <li className="tab"><label htmlFor="tab23">Abono</label></li>
           </ul>
 

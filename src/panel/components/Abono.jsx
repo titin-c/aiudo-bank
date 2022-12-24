@@ -2,7 +2,7 @@ import { useSelector,useDispatch } from 'react-redux';
 import { useForm } from '../../hooks/useForm';
 import { abono } from '../../store/panel/bankActionsSlice';
 
-import { GoAlert } from "react-icons/go";
+import { GoInfo } from "react-icons/go";
 
 export const Abono = () => {
 
@@ -11,8 +11,7 @@ export const Abono = () => {
     const dispatch = useDispatch();
 
     const { cantidadAbono, onInputChange } = useForm({
-        cantidadAbono: '',
-        errorMessage:''
+        cantidadAbono: ''
     });
 
     const onSubmitAbono = (event) => {
@@ -51,7 +50,7 @@ export const Abono = () => {
                     </select>
                     <button className="btn btn-primary">+</button>
                 </div>
-                <div className={`form-feedback ${errorMessage!='' ? 'error' : ''}`}><GoAlert /> { errorMessage }</div>
+                <div className={`form-feedback ${errorMessage!='' ? 'error' : ''}`}><GoInfo /> { errorMessage }</div>
             </div>
         </form>
     )

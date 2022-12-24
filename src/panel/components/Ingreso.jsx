@@ -1,9 +1,11 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {useForm} from '../../hooks/useForm';
 import { ingreso } from '../../store/panel/bankActionsSlice';
+import { GoInfo } from "react-icons/go";
 
 export const Ingreso = () => {
     const dispatch = useDispatch();
+    const { errorMessage } = useSelector(state => state.bankActions);
 
     const { cantidadIngreso, onInputChange } = useForm({
         cantidadIngreso: ''
@@ -33,6 +35,7 @@ export const Ingreso = () => {
                     />
                     <button className="btn btn-primary" type="submit" >+</button>
                 </div>
+                <div className={`form-feedback ${errorMessage != '' ? 'error' : ''}`}><GoInfo /> {errorMessage}</div>
             </div>
         </form>
     )

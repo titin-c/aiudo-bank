@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useForm } from '../../hooks/useForm';
-import { transferencia } from '../../store/panel/bankActionsSlice';
+import { borrarMensaje, transferencia } from '../../store/panel/bankActionsSlice';
 
-import { GoAlert } from "react-icons/go";
+import { GoInfo } from "react-icons/go";
 import { getPersonajes } from '../../store/panel';
 
 export const Transferencia = () => {
@@ -63,7 +63,7 @@ export const Transferencia = () => {
                     </select>
                     <button className="btn btn-primary" type='submit'>+</button>
                 </div>
-                <div className={`form-feedback ${errorMessage != '' ? 'error' : ''}`}><GoAlert /> {errorMessage}</div>
+                <div className={`form-feedback ${errorMessage != '' ? 'error' : ''}`}><GoInfo /> {errorMessage}</div>
 
             </div>
         </form>
