@@ -1,7 +1,7 @@
 
 import { useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link  } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { AuthLayout } from '../layout/AuthLayout';
 import { useForm } from '../../hooks';
 
@@ -16,9 +16,9 @@ const formData = {
 }
 
 const formValidations = {
-  email: [ (value) => value.includes('@'), 'El correo debe de tener una @'],
-  password: [ (value) => value.length >= 6, 'El password debe de tener más de 6 letras.'],
-  displayName: [ (value) => value.length >= 1, 'El nombre es obligatorio.'],
+  email: [(value) => value.includes('@'), 'El correo debe de tener una @'],
+  password: [(value) => value.length >= 6, 'El password debe de tener más de 6 letras.'],
+  displayName: [(value) => value.length >= 1, 'El nombre es obligatorio.'],
 }
 
 
@@ -27,21 +27,21 @@ export const RegisterPage = () => {
   const dispatch = useDispatch();
   const [formSubmitted, setFormSubmitted] = useState(false);
 
-  const { status, errorMessage } = useSelector( state => state.auth );
-  const isCheckingAuthentication = useMemo( () => status === 'checking', [status]);
+  const { status, errorMessage } = useSelector(state => state.auth);
+  const isCheckingAuthentication = useMemo(() => status === 'checking', [status]);
 
-  const { 
+  const {
     formState, displayName, email, password, onInputChange,
-    isFormValid, displayNameValid, emailValid, passwordValid, 
-  } = useForm( formData, formValidations );
+    isFormValid, displayNameValid, emailValid, passwordValid,
+  } = useForm(formData, formValidations);
 
-  const onSubmit = ( event ) => {
+  const onSubmit = (event) => {
     event.preventDefault();
     setFormSubmitted(true);
 
-    if ( !isFormValid ) return;
+    if (!isFormValid) return;
 
-    dispatch( startCreatingUserWithEmailPassword(formState) );
+    dispatch(startCreatingUserWithEmailPassword(formState));
   }
 
 
@@ -104,7 +104,7 @@ export const RegisterPage = () => {
               <small>Aceptar Terminos Legales</small>
             </label>
           </div>
-          <div className={`form-feedback ${!!errorMessage ? 'error': ''}`}><GoAlert /> { errorMessage }</div>
+          <div className={`form-feedback ${!!errorMessage ? 'error' : ''}`}><GoAlert /> {errorMessage}</div>
           <button
             className={`btn btn-dark block btn-big ${isCheckingAuthentication && 'btn-disabled'}`}
             type="submit"

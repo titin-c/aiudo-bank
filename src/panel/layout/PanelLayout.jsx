@@ -1,26 +1,34 @@
 
 import { useDispatch, useSelector } from 'react-redux';
 import { startLogout } from '../../store/auth';
+
 import { Link } from 'react-router-dom';
+
 import useToggle from '../../hooks/useToogle';
+
 import { FaUserCircle, FaBars } from 'react-icons/fa';
 import { FiLogOut } from 'react-icons/fi';
+
 import 'animate.css';
 
 
 export const PanelLayout = ({ children, title = '' }) => {
 
+  //obtenemos del state el valor de la cuenta y el valor del préstamo
   const { totalPrestamo, totalCount } = useSelector(state => state.bankActions);
+  //El valor total de las posiciones es la suma de los dos productos bancarios, la cuenta y el préstamo.
   const totalPositions = totalPrestamo + totalCount;
 
+  //obtenemos el nombre y el avatar del state del auth
   const { displayName, photoURL } = useSelector(state => state.auth)
 
   const dispatch = useDispatch();
 
+  //función para desloguearse con el dispatch de la acción.
   const onLogout = () => {
     dispatch(startLogout())
   }
-
+//toogle para cerrar y abrir el menú
   const { toggled, setToggle } = useToggle(false);
 
   return (

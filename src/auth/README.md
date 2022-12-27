@@ -1,6 +1,6 @@
 # Carpeta auth
 
-En esta carpeta está todo lo relativo a las páginas de login y registro (autenticación), por ser distintas al panel.
+En esta carpeta está todo lo relativo a las páginas de login y registro (autenticación), por ser distintas a las páginas del panel.
 
 ## Subcarpetas y archivos
 

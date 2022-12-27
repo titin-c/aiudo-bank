@@ -59,6 +59,18 @@ margin-bottom: 20px;
             margin-right: 5px;
         }
     }
+    &.alert{
+        display: flex;
+        align-items: flex-start;
+        margin-top: 5px;
+        color:$danger;
+    }
+    &.info{
+        display: flex;
+        align-items: flex-start;
+        margin-top: 5px;
+        color:$success;
+    }
 }
 
 .btn {

@@ -13,26 +13,27 @@ import { GoAlert } from "react-icons/go";
 
 export const LoginPage = () => {
 
-  const { status, errorMessage } = useSelector( state => state.auth );
+  const { status, errorMessage } = useSelector(state => state.auth);
 
   const dispatch = useDispatch();
+
   const { email, password, onInputChange } = useForm({
     email: '',
     password: ''
   });
+  //Memorizamos el estatus si es igual a checking
+  const isAuthenticating = useMemo(() => status === 'checking', [status]);
 
-  const isAuthenticating = useMemo( () => status === 'checking', [status]);
-
-  const onSubmit = ( event ) => {
+  const onSubmit = (event) => {
     event.preventDefault();
 
     // console.log({ email, password })
-    dispatch( startLoginWithEmailPassword({ email, password }) );
+    dispatch(startLoginWithEmailPassword({ email, password }));
   }
 
   const onGoogleSignIn = () => {
-    console.log('onGoogleSignIn');
-    dispatch( startGoogleSignIn() );
+    //console.log('onGoogleSignIn');
+    dispatch(startGoogleSignIn());
   }
 
   return (
@@ -69,7 +70,7 @@ export const LoginPage = () => {
               onChange={onInputChange}
             />
           </div>
-          <div className={`form-feedback ${!!errorMessage ? 'error': ''}`}><GoAlert /> { errorMessage }</div>
+          <div className={`form-feedback ${!!errorMessage ? 'error' : ''}`}><GoAlert /> {errorMessage}</div>
           <div className="buttons">
             <button
               className={`btn btn-dark block btn-big ${isAuthenticating && 'btn-disabled'}`}

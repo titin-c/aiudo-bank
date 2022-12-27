@@ -1,10 +1,11 @@
 import { useEffect } from 'react';
+
 import { useDispatch, useSelector } from 'react-redux';
+import { getPersonajes, transferencia } from '../../store/panel';
+
 import { useForm } from '../../hooks/useForm';
-import { borrarMensaje, transferencia } from '../../store/panel/bankActionsSlice';
 
 import { GoInfo } from "react-icons/go";
-import { getPersonajes } from '../../store/panel';
 
 export const Transferencia = () => {
 
@@ -14,7 +15,7 @@ export const Transferencia = () => {
 
     const { isLoading, personajes } = useSelector(state => state.rickMorty);
 
-    const { errorMessage } = useSelector(state => state.bankActions);
+    const { errorMessage, messageType } = useSelector(state => state.bankActions);
     const dispatch = useDispatch();
 
     const { cantidadTransferencia, onInputChange } = useForm({
@@ -52,18 +53,25 @@ export const Transferencia = () => {
                     Seleccione desitnatario
                 </label>
                 <div className="input-button">
-                    <select className="form-control block" type="number" placeholder="Ej. 300" required id="form-control-2" >
+
+                    {
+                    // Si los personajes del API están cargados los muestra en en select
+                    isLoading ? 'Cargando...' : 
+                    <select className="form-control block" type="number" required id="form-control-2" >
                         <option value="">Selecciona destinatario</option>
                         {
+                            // Mapeamos los personajes de Rick y Morti como usuarios a los que hacer las transferencia
                             personajes.map(user => (
                                 <option key={user.id} value={user.name}>{user.name}</option>
                             ))
                         }
 
                     </select>
+                    }
                     <button className="btn btn-primary" type='submit'>+</button>
                 </div>
-                <div className={`form-feedback ${errorMessage != '' ? 'error' : ''}`}><GoInfo /> {errorMessage}</div>
+                {/* Mostramos u ocultamos los avisos y mensajes al operar */}
+                <div className={`form-feedback ${errorMessage != '' ? messageType : ''}`}><GoInfo /> {errorMessage}</div>
 
             </div>
         </form>

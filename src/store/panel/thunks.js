@@ -1,9 +1,9 @@
-import { async } from "@firebase/util";
+
 import { setPersonajes, startLoadingPersonajes } from "./rickAndMortySlice"
 
 export const getPersonajes = (page=0)=>{
 
-    return async(dispatch, getState) =>{
+    return async(dispatch) =>{
         dispatch(startLoadingPersonajes());
 
         const resp = await fetch(`https://rickandmortyapi.com/api/character/?page=${page}`);
