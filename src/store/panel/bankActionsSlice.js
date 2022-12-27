@@ -40,7 +40,7 @@ y debería ser algo así
         },
 
         },
-    ]
+    ],
 }
 
 */

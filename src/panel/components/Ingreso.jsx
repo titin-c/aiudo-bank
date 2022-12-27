@@ -16,9 +16,7 @@ export const Ingreso = () => {
       const onSubmitIngreso = ( event ) => {
         
         event.preventDefault();
-        
-        dispatch( ingreso( Number(cantidadIngreso) ) );
-        
+        dispatch( ingreso( Number(cantidadIngreso) ) );        
       }
 
     return (
